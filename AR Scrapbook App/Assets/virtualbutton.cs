@@ -5,7 +5,7 @@ using Vuforia;
 
 public class virtualbutton : MonoBehaviour
 {
-    public GameObject model;
+    public GameObject model, audio;
     VirtualButtonBehaviour[] awa;
     // Start is called before the first frame update
     void Start()
@@ -17,18 +17,21 @@ public class virtualbutton : MonoBehaviour
             awa[i].RegisterOnButtonReleased(OnButtonReleased);
         }
         model.SetActive(false);
+        audio.SetActive(false);
     }
 
     public void OnButtonPressed(VirtualButtonBehaviour go
         )
     {
         model.SetActive(true);
+        audio.SetActive(true);
     }
 
     public void OnButtonReleased(VirtualButtonBehaviour go
         )
     {
         model.SetActive(false);
+        audio.SetActive(false);
     }
 
 }
